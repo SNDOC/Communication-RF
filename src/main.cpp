@@ -1,11 +1,11 @@
 /**     // TO DO
  * @file main.cpp
  * @author Brousse Antoine
- * @brief Gestion du module ADC de la carte D1 R32
+ * @brief Communication RF
  * @version 0.1
- * @date 17-01-2025
+ * @date 04-02-2025
  * 
- * @copyright Copyright (c) 2023
+ * @copyright Copyright (c) 2025
  * 
  */
 //////////////////////////////////////////////////////////////////////
