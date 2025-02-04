@@ -10,9 +10,9 @@
 
 void initialiserLiaisonSerie(unsigned int vitesse = VITESSE_TRANSMISSION);
 
-void envoyerTrame(String trame);
+void envoyerTrame();
 
-string construireTrame (u_int16_t valeurADC, u_int8_t anglePotentiometre, u_int8_t variationPotentiometre, u_int32_t valeurADCenMilivolts);
+string construireTrame ();
 
 void attendre(unsigned int delais);
 
