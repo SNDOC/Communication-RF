@@ -9,14 +9,12 @@ void initialiserLiaisonSerie(unsigned int vitesse)
   Serial.begin(vitesse);
 }
 
-void envoyerTrame(String trame)
+void envoyerTrame()
 { 
-  Serial.print(trame);
 }
 
-String construireTrame(u_int16_t valeurADC, u_int8_t anglePotentiometre, u_int8_t variationPotentiometre, u_int32_t valeurADCenMilivolts)
+String construireTrame()
 {
-String trame = "Position : " + anglePotentiometre + "\n" + "Variation : " + variationPotentiometre + "%" + "\n" + "Tension : " + valeurADCenMilivolts + + "mV" + "\n" +  "ADC : " + valeurADC + "\n" ;
 }
 
 void attendre(unsigned int delais)
