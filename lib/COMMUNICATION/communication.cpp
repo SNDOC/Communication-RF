@@ -13,11 +13,11 @@ void attendre(u_long delais)
   
 }
 
-HardwareSerial mySerial(2); UART2
+HardwareSerial mySerial(2); //UART2
 
-void transmission(int Pin_RX, int Pin_TX, int vitesseTransmissionReduite)
+void transmission(int pinRx, int pinTx, int vitesseTransmissionReduite)
 {
-  mySerial.begin(vitesseTransmissionReduite, SERIAL_8N1, Pin_RX, Pin_TX);
+  mySerial.begin(vitesseTransmissionReduite, SERIAL_8N1, pinRx, pinTx);
 }
 
 void afficherTrame()
@@ -28,4 +28,17 @@ void afficherTrame()
     String contenu = trame.substring(2, trame.length() - 3);
     Serial.println("Trame reçu : " + contenu);
   }
+}
+
+void envoyerTram(String SERRE_ID, String TRAME_NUM, String TEMPERATURE, String HUMIDITE)
+{
+
+  String data = "SERRE;" + String (SERRE_ID) + ";" + String (TRAME_NUM) + ";" + String (TEMPERATURE) + ";C;" + String (HUMIDITE) + ";%";
+  String trame = "\x02" + data + "\x03\r\n";  // Trame
+
+  mySerial.print(trame);  // Envoi via UART
+  Serial.println("Trame envoyée : " + trame); 
+
+  delay(1000);
+
 }

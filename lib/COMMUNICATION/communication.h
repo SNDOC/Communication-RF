@@ -8,9 +8,9 @@
 
 
 void initialiserLiaisonSerie(unsigned int vitesse = VITESSE_DE_TRANSMISSION);
-void transmission(int Pin_RX, int Pin_TX, int vitesseTransmissionReduite = VITESSE_DE_TRANSMISSION_REDUITE);
-void afficerTrame();
+void transmission(int pinRx, int pinTx, int vitesseTransmissionReduite = VITESSE_DE_TRANSMISSION_REDUITE);
+void afficherTrame();
+void envoyerTram(String SERRE_ID, String TRAME_NUM, String TEMPERATURE, String HUMIDITE);
 void attendre();
-
 
 #endif

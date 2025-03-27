@@ -10,28 +10,26 @@
  */
 //////////////////////////////////////////////////////////////////////
 #include <Arduino.h>
-#include "controleLed.h"
-
-uint8_t etatBouton = 0;
-uint8_t nombreAppui = 0;
-
+#include "communication.h"
+#define RECEPTION
+//////////////////////////////////////////////////////////////////////
+#define pinTx 17
+#define pinRx 16
 //////////////////////////////////////////////////////////////////////
 void setup() 
 {
-  initialiserBroches();
-  allumerLed();
+  initialiserLiaisonSerie();
+  transmission(pinRx, pinTx);
 }
 //////////////////////////////////////////////////////////////////////
+#ifdef RECEPTION
 void loop() 
 {
-  etatBouton = lireEtatBouton();
-  if (etatBouton == BAS)
-  {
-	  eteindreLed (nombreAppui);
-	  allumerLed (nombreAppui + 1);
-	  if (nombreAppui > NOMBRES_APPUI)
-	  {
-		  nombreAppui = 0;
-	  }
-  }
+  afficherTrame();
 }
+#else
+void loop() 
+{
+  void envoyerTram(String SERRE_ID, String TRAME_NUM, String TEMPERATURE, String HUMIDITE)
+}
+#endif
