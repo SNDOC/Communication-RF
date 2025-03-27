@@ -7,6 +7,27 @@
 
 Cette activité est à réaliser avec **PlatformIO** pour une carte ESP32 avec le _framework_ **Arduino**.
 
+---
+
+# Schéma de principe du TP
+
+> [!NOTE]
+> Les cartes utilisées est une Wemos D1 R32 (AZ Delivery)
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Ne pas utiliser les broches RX0 et TX0 car utilisées pour la liaison série
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+---
+
 Le fichier de projet `platformio.ini` :
 
 ```ini
