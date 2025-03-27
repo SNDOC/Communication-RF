@@ -1,22 +1,37 @@
 /**     // TO DO
  * @file main.cpp
- * @author Brousse Antoine
- * @brief Communication RF
+ * @author Antoine Brousse
+ * @brief 
  * @version 0.1
- * @date 04-02-2025
+ * @date 27/03/2025
  * 
- * @copyright Copyright (c) 2025
+ * @copyright Copyright (c) 2024
  * 
  */
 //////////////////////////////////////////////////////////////////////
-
 #include <Arduino.h>
+#include "controleLed.h"
+
+uint8_t etatBouton = 0;
+uint8_t nombreAppui = 0;
 
 //////////////////////////////////////////////////////////////////////
-void setup() {
-   // TO DO
- }
+void setup() 
+{
+  initialiserBroches();
+  allumerLed();
+}
 //////////////////////////////////////////////////////////////////////
-void loop() {
-  // TO DO
+void loop() 
+{
+  etatBouton = lireEtatBouton();
+  if (etatBouton == BAS)
+  {
+	  eteindreLed (nombreAppui);
+	  allumerLed (nombreAppui + 1);
+	  if (nombreAppui > NOMBRES_APPUI)
+	  {
+		  nombreAppui = 0;
+	  }
+  }
 }
